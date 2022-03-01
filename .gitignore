@@ -1,0 +1,9 @@
+# macOS File System
+.DS_Store
+
+# Input and Output Files
+*.in
+*.out
+
+# Java Binaries
+*.class
