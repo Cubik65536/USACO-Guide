@@ -7,6 +7,9 @@ const int MAXN = 2505;
 using ll = long long;
 using pii = pair<int, int>;
 
+#define X first
+#define Y second
+
 int pre[MAXN][MAXN];
 
 int getSum(int x1, int y1, int x2, int y2) {
@@ -20,19 +23,19 @@ int main() {
     pii cowCoordinates[MAXN];
 
     for(int i = 0; i < n; i++) {
-		cin >> cowCoordinates[i].first >> cowCoordinates[i].second;
+		cin >> cowCoordinates[i].X >> cowCoordinates[i].Y;
     }
 
 	for(int t = 0; t < 2; t++) {
 		sort(cowCoordinates, cowCoordinates + n);
 		for(int i = 0; i < n; i++){
-			cowCoordinates[i].first = i + 1;
-			swap(cowCoordinates[i].first, cowCoordinates[i].second);
+			cowCoordinates[i].X = i + 1;
+			swap(cowCoordinates[i].X, cowCoordinates[i].Y);
 		}
 	}
 
 	for(int i = 0; i < n; i++) {
-		pre[cowCoordinates[i].first][cowCoordinates[i].second]++;
+		pre[cowCoordinates[i].X][cowCoordinates[i].Y]++;
     }
 
 	for(int i = 1; i <= n; i++) {
@@ -44,8 +47,8 @@ int main() {
 	ll result = 1;
 	for(int i = 0; i < n; i++){
 		for(int j = i; j < n; j++){
-			int x1 = min(cowCoordinates[i].first, cowCoordinates[j].first);
-			int x2 = max(cowCoordinates[i].first, cowCoordinates[j].first);
+			int x1 = min(cowCoordinates[i].X, cowCoordinates[j].X);
+			int x2 = max(cowCoordinates[i].X, cowCoordinates[j].X);
 			result += getSum(1, i + 1, x1, j + 1) * getSum(x2, i + 1, n, j + 1);
 		}
 	}
