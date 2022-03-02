@@ -15,7 +15,7 @@ bool mountainComparator(const Mountain& mountain1, const Mountain& mountain2) {
 
 int main() {
     freopen("mountains.in", "r", stdin);
-	freopen("mountains.out", "w", stdout);
+    freopen("mountains.out", "w", stdout);
 
     int n;
     cin >> n;

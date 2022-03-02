@@ -13,7 +13,7 @@ bool lifeguardComparator(const Lifeguard& lifeguard1, const Lifeguard& lifeguard
 
 int main() {
     freopen("lifeguards.in", "r", stdin);
-	freopen("lifeguards.out", "w", stdout);
+    freopen("lifeguards.out", "w", stdout);
 
     int n;
 	cin >> n;
