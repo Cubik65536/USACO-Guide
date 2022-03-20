@@ -8,7 +8,7 @@ void floodFill(int currentX, int currentY, int currentK) {
 	if (visited[currentX][currentY][currentK] || currentK > k) {
         return;
     }
-    
+
 	visited[currentX][currentY][currentK] = true;
 
 	result = min(result, abs(m - (currentX + currentY)));
